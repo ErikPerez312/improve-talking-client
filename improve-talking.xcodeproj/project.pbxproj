@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8607AF08216A967C00DA3DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF07216A967C00DA3DDA /* AppDelegate.swift */; };
+		8607AF0A216A967C00DA3DDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF09216A967C00DA3DDA /* ViewController.swift */; };
+		8607AF0D216A967C00DA3DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF0B216A967C00DA3DDA /* Main.storyboard */; };
+		8607AF0F216A967E00DA3DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF0E216A967E00DA3DDA /* Assets.xcassets */; };
+		8607AF12216A967E00DA3DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */; };
+		DFBD4C40CB89E73C085E07AD /* Pods_improve_talking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0CEF4A2B62426922B849713 /* Pods_improve_talking.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7E98681F7908409070222327 /* Pods-improve-talking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-improve-talking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking.debug.xcconfig"; sourceTree = "<group>"; };
+		8607AF04216A967C00DA3DDA /* improve-talking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "improve-talking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8607AF07216A967C00DA3DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8607AF09216A967C00DA3DDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8607AF0C216A967C00DA3DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8607AF0E216A967E00DA3DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8607AF11216A967E00DA3DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8607AF13216A967E00DA3DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0CEF4A2B62426922B849713 /* Pods_improve_talking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_improve_talking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA19E017879DE78E37AF8567 /* Pods-improve-talking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-improve-talking.release.xcconfig"; path = "Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8607AF01216A967C00DA3DDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFBD4C40CB89E73C085E07AD /* Pods_improve_talking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25E7529D57479374CBE5192F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0CEF4A2B62426922B849713 /* Pods_improve_talking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		31E8D0633DA4F4106D958B30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E98681F7908409070222327 /* Pods-improve-talking.debug.xcconfig */,
+				EA19E017879DE78E37AF8567 /* Pods-improve-talking.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8607AEFB216A967B00DA3DDA = {
+			isa = PBXGroup;
+			children = (
+				8607AF06216A967C00DA3DDA /* improve-talking */,
+				8607AF05216A967C00DA3DDA /* Products */,
+				31E8D0633DA4F4106D958B30 /* Pods */,
+				25E7529D57479374CBE5192F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8607AF05216A967C00DA3DDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8607AF04216A967C00DA3DDA /* improve-talking.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8607AF06216A967C00DA3DDA /* improve-talking */ = {
+			isa = PBXGroup;
+			children = (
+				8607AF07216A967C00DA3DDA /* AppDelegate.swift */,
+				8607AF09216A967C00DA3DDA /* ViewController.swift */,
+				8607AF0B216A967C00DA3DDA /* Main.storyboard */,
+				8607AF0E216A967E00DA3DDA /* Assets.xcassets */,
+				8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */,
+				8607AF13216A967E00DA3DDA /* Info.plist */,
+			);
+			path = "improve-talking";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8607AF03216A967C00DA3DDA /* improve-talking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8607AF16216A967E00DA3DDA /* Build configuration list for PBXNativeTarget "improve-talking" */;
+			buildPhases = (
+				60E9E0B8EFD5298DE194EFDA /* [CP] Check Pods Manifest.lock */,
+				8607AF00216A967C00DA3DDA /* Sources */,
+				8607AF01216A967C00DA3DDA /* Frameworks */,
+				8607AF02216A967C00DA3DDA /* Resources */,
+				3D4E9FFA180617F2EDE407D2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "improve-talking";
+			productName = "improve-talking";
+			productReference = 8607AF04216A967C00DA3DDA /* improve-talking.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8607AEFC216A967B00DA3DDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Erik Perez";
+				TargetAttributes = {
+					8607AF03216A967C00DA3DDA = {
+						CreatedOnToolsVersion = 9.4;
+					};
+				};
+			};
+			buildConfigurationList = 8607AEFF216A967B00DA3DDA /* Build configuration list for PBXProject "improve-talking" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8607AEFB216A967B00DA3DDA;
+			productRefGroup = 8607AF05216A967C00DA3DDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8607AF03216A967C00DA3DDA /* improve-talking */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8607AF02216A967C00DA3DDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8607AF12216A967E00DA3DDA /* LaunchScreen.storyboard in Resources */,
+				8607AF0F216A967E00DA3DDA /* Assets.xcassets in Resources */,
+				8607AF0D216A967C00DA3DDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D4E9FFA180617F2EDE407D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60E9E0B8EFD5298DE194EFDA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-improve-talking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8607AF00216A967C00DA3DDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8607AF0A216A967C00DA3DDA /* ViewController.swift in Sources */,
+				8607AF08216A967C00DA3DDA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8607AF0B216A967C00DA3DDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8607AF0C216A967C00DA3DDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8607AF11216A967E00DA3DDA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8607AF14216A967E00DA3DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8607AF15216A967E00DA3DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8607AF17216A967E00DA3DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E98681F7908409070222327 /* Pods-improve-talking.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFR976VMLD;
+				INFOPLIST_FILE = "improve-talking/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perezErik.improve-talking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8607AF18216A967E00DA3DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA19E017879DE78E37AF8567 /* Pods-improve-talking.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFR976VMLD;
+				INFOPLIST_FILE = "improve-talking/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perezErik.improve-talking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8607AEFF216A967B00DA3DDA /* Build configuration list for PBXProject "improve-talking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8607AF14216A967E00DA3DDA /* Debug */,
+				8607AF15216A967E00DA3DDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8607AF16216A967E00DA3DDA /* Build configuration list for PBXNativeTarget "improve-talking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8607AF17216A967E00DA3DDA /* Debug */,
+				8607AF18216A967E00DA3DDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8607AEFC216A967B00DA3DDA /* Project object */;
+}

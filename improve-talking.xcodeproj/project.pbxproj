@@ -12,6 +12,8 @@
 		8607AF0D216A967C00DA3DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF0B216A967C00DA3DDA /* Main.storyboard */; };
 		8607AF0F216A967E00DA3DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF0E216A967E00DA3DDA /* Assets.xcassets */; };
 		8607AF12216A967E00DA3DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */; };
+		8607AF1B216A97B700DA3DDA /* ToastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF1A216A97B700DA3DDA /* ToastAPI.swift */; };
+		8607AF1D216A981E00DA3DDA /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF1C216A981E00DA3DDA /* Route.swift */; };
 		DFBD4C40CB89E73C085E07AD /* Pods_improve_talking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0CEF4A2B62426922B849713 /* Pods_improve_talking.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,8 @@
 		8607AF0E216A967E00DA3DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8607AF11216A967E00DA3DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8607AF13216A967E00DA3DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8607AF1A216A97B700DA3DDA /* ToastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAPI.swift; sourceTree = "<group>"; };
+		8607AF1C216A981E00DA3DDA /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		E0CEF4A2B62426922B849713 /* Pods_improve_talking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_improve_talking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA19E017879DE78E37AF8567 /* Pods-improve-talking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-improve-talking.release.xcconfig"; path = "Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +82,7 @@
 		8607AF06216A967C00DA3DDA /* improve-talking */ = {
 			isa = PBXGroup;
 			children = (
+				8607AF19216A978F00DA3DDA /* Networking */,
 				8607AF07216A967C00DA3DDA /* AppDelegate.swift */,
 				8607AF09216A967C00DA3DDA /* ViewController.swift */,
 				8607AF0B216A967C00DA3DDA /* Main.storyboard */,
@@ -86,6 +91,15 @@
 				8607AF13216A967E00DA3DDA /* Info.plist */,
 			);
 			path = "improve-talking";
+			sourceTree = "<group>";
+		};
+		8607AF19216A978F00DA3DDA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8607AF1A216A97B700DA3DDA /* ToastAPI.swift */,
+				8607AF1C216A981E00DA3DDA /* Route.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8607AF1B216A97B700DA3DDA /* ToastAPI.swift in Sources */,
+				8607AF1D216A981E00DA3DDA /* Route.swift in Sources */,
 				8607AF0A216A967C00DA3DDA /* ViewController.swift in Sources */,
 				8607AF08216A967C00DA3DDA /* AppDelegate.swift in Sources */,
 			);
@@ -349,6 +365,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFR976VMLD;
 				INFOPLIST_FILE = "improve-talking/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +373,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perezErik.improve-talking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -368,6 +385,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFR976VMLD;
 				INFOPLIST_FILE = "improve-talking/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,7 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perezErik.improve-talking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

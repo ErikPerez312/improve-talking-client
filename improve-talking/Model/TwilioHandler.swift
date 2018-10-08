@@ -29,20 +29,27 @@ protocol TwilioHandlerDelegate: class {
 
 class TwilioHandler: NSObject {
     
-    weak var delegate: TwilioHandlerDelegate? {
-        didSet {
-            // We only want to connect to chatroom once we have a delegate.
-            guard let _ = delegate else { return }
-            let localMedia = prepareLocalMedia()
-            connectToRoom(withName: roomName, token: roomToken, localMedia: localMedia)
+    weak var delegate: TwilioHandlerDelegate?
+    
+    /// Connects user to Twilio chatroom.
+    /// - Parameters:
+    ///   - name: The unique name for the chatroom.
+    ///   - token: The secure token for entering the chatroom.
+    func connectToRoom(withName name: String, token: String) {
+        // We only want to connect to chatroom once we have a delegate.
+        guard let _ = delegate else {
+            fatalError("\n* TwilioHandler: delegate missing\n")
         }
+        let localMedia = prepareLocalMedia()
+        let connectOptions = TVIConnectOptions(token: token) { builder in
+            builder.audioTracks = localMedia.audioTracks
+            builder.videoTracks = localMedia.videoTracks
+            builder.roomName = name
+        }
+        self.room = TwilioVideo.connect(with: connectOptions, delegate: self)
     }
     
-    init(roomName: String, roomToken: String) {
-        self.roomName = roomName
-        self.roomToken = roomToken
-    }
-    
+    /// Disconnects user from chatroom
     func disconnectFromRoom() {
         cleanUpRemoteParticipant()
         room?.disconnect()
@@ -50,8 +57,6 @@ class TwilioHandler: NSObject {
     
     // MARK: - Private
     
-    private let roomName: String
-    private let roomToken: String
     private var room: TVIRoom?
     private var remoteUser: TVIParticipant?
     
@@ -63,18 +68,6 @@ class TwilioHandler: NSObject {
         }
         delegate?.addRenderer(forLocalVideoTrack: videoTrack)
         return ([videoTrack], [audioTrack])
-    }
-    
-    private func connectToRoom(withName name: String,
-                               token: String,
-                               localMedia: (videoTracks: [TVILocalVideoTrack], audioTracks: [TVILocalAudioTrack])) {
-        
-        let connectOptions = TVIConnectOptions(token: token) { builder in
-            builder.audioTracks = localMedia.audioTracks
-            builder.videoTracks = localMedia.videoTracks
-            builder.roomName = name
-        }
-        self.room = TwilioVideo.connect(with: connectOptions, delegate: self)
     }
     
     private func cleanUpRemoteParticipant() {

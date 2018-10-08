@@ -1,16 +1,24 @@
 PODS:
+  - ActionCableClient (0.2.3):
+    - Starscream (~> 2.0.0)
   - SnapKit (4.0.0)
+  - Starscream (2.0.4)
 
 DEPENDENCIES:
+  - ActionCableClient
   - SnapKit (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ActionCableClient
     - SnapKit
+    - Starscream
 
 SPEC CHECKSUMS:
+  ActionCableClient: c8a466410d31bfa14e7a9c209b539c1e2d026a5f
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  Starscream: df5974ee928b157c8eda8af8de7c620276b7dfcc
 
-PODFILE CHECKSUM: ef2d810f111f8f7a172cc0c7afbc4be7f5a43456
+PODFILE CHECKSUM: f91c58c8e3614ac9aeff5c1f20a198b3cfc0f070
 
 COCOAPODS: 1.5.3

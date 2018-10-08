@@ -7,4 +7,5 @@ target 'improve-talking' do
 
   # Pods for improve-talking
   pod 'SnapKit', '~> 4.0.0'
+  pod "ActionCableClient"
 end

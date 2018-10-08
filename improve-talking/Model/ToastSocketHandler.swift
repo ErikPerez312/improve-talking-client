@@ -48,7 +48,7 @@ class ToastSocketHandler {
     private func buildClient(withSocketURL socketURL: URL, origin: String) {
         let client = ActionCableClient(url: socketURL)
         client.origin = origin
-        client.headers = ["Authorization": "Bearer \(userToken)"]
+        client.headers = ["Authorization": userToken]
         client.connect()
         
         client.onConnected = {
@@ -61,6 +61,7 @@ class ToastSocketHandler {
     
     private func buildChatChannel(withClient client: ActionCableClient) {
         let channel = client.create("ChatChannel")
+        self.chatChannel = channel
         channel.onReceive = { (data: Any?, error: Error?) in
             guard let data = data,
                 let chatRoom = data as? [String: String],

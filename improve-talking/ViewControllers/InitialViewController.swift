@@ -63,6 +63,7 @@ class InitialViewController: UIViewController {
         button.backgroundColor = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.03137254902, alpha: 1)
         button.setTitle("Continue", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
+        
 //        button.layer.shadowColor = #colorLiteral(red: 0.231372549, green: 0.2509803922, blue: 0.2784313725, alpha: 1)
 //        button.layer.shadowRadius = 2.0
 //        button.layer.shadowOpacity = 1.0
@@ -73,6 +74,11 @@ class InitialViewController: UIViewController {
     }()
     
     //MARK: FUNCTIONS
+    
+    @objc private func moveToHome() {
+        let homeVC = HomeViewController()
+        self.present(homeVC, animated: true, completion: nil)
+    }
     
     private func addOutlets() {
         self.view.addSubview(iconImageView)
@@ -127,6 +133,7 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        continueButton.addTarget(self, action: #selector(moveToHome), for: .touchUpInside)
         hideKeyboardWhenTappedAround()
         view.backgroundColor = #colorLiteral(red: 0.934114673, green: 0.9433633331, blue: 0.9433633331, alpha: 1)
         addOutlets()

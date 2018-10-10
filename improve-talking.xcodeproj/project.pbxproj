@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		846BD9BA216D6B1600B05DCB /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BD9B9216D6B1600B05DCB /* InitialViewController.swift */; };
+		846BD9BE216DB9FE00B05DCB /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BD9BD216DB9FE00B05DCB /* TextFieldExtension.swift */; };
 		8607AF08216A967C00DA3DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF07216A967C00DA3DDA /* AppDelegate.swift */; };
 		8607AF0A216A967C00DA3DDA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF09216A967C00DA3DDA /* HomeViewController.swift */; };
 		8607AF0F216A967E00DA3DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF0E216A967E00DA3DDA /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		7E98681F7908409070222327 /* Pods-improve-talking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-improve-talking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking.debug.xcconfig"; sourceTree = "<group>"; };
+		846BD9B9216D6B1600B05DCB /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		846BD9BD216DB9FE00B05DCB /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		8607AF04216A967C00DA3DDA /* improve-talking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "improve-talking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8607AF07216A967C00DA3DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8607AF09216A967C00DA3DDA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		846BD9B8216D684800B05DCB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				846BD9B9216D6B1600B05DCB /* InitialViewController.swift */,
+				8607AF09216A967C00DA3DDA /* HomeViewController.swift */,
+				8607AF25216C139A00DA3DDA /* ChatViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		8607AEFB216A967B00DA3DDA = {
 			isa = PBXGroup;
 			children = (
@@ -86,11 +100,11 @@
 		8607AF06216A967C00DA3DDA /* improve-talking */ = {
 			isa = PBXGroup;
 			children = (
+				846BD9BD216DB9FE00B05DCB /* TextFieldExtension.swift */,
 				8607AF1E216BD03800DA3DDA /* Model */,
 				8607AF19216A978F00DA3DDA /* Networking */,
 				8607AF07216A967C00DA3DDA /* AppDelegate.swift */,
-				8607AF09216A967C00DA3DDA /* HomeViewController.swift */,
-				8607AF25216C139A00DA3DDA /* ChatViewController.swift */,
+				846BD9B8216D684800B05DCB /* ViewControllers */,
 				8607AF0E216A967E00DA3DDA /* Assets.xcassets */,
 				8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */,
 				8607AF13216A967E00DA3DDA /* Info.plist */,
@@ -128,6 +142,7 @@
 				8607AF01216A967C00DA3DDA /* Frameworks */,
 				8607AF02216A967C00DA3DDA /* Resources */,
 				3D4E9FFA180617F2EDE407D2 /* [CP] Embed Pods Frameworks */,
+				5C7A4E389E3B7B9A0D10A7D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,6 +223,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5C7A4E389E3B7B9A0D10A7D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		60E9E0B8EFD5298DE194EFDA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846BD9BE216DB9FE00B05DCB /* TextFieldExtension.swift in Sources */,
 				8607AF1B216A97B700DA3DDA /* ToastAPI.swift in Sources */,
 				8607AF22216BE5ED00DA3DDA /* ToastSocketHandler.swift in Sources */,
 				8607AF24216BFCE300DA3DDA /* TwilioHandler.swift in Sources */,
@@ -240,6 +271,7 @@
 				8607AF1D216A981E00DA3DDA /* Route.swift in Sources */,
 				8607AF0A216A967C00DA3DDA /* HomeViewController.swift in Sources */,
 				8607AF08216A967C00DA3DDA /* AppDelegate.swift in Sources */,
+				846BD9BA216D6B1600B05DCB /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QFR976VMLD;
+				DEVELOPMENT_TEAM = X3T6G6B4MK;
 				INFOPLIST_FILE = "improve-talking/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -397,7 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QFR976VMLD;
+				DEVELOPMENT_TEAM = X3T6G6B4MK;
 				INFOPLIST_FILE = "improve-talking/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

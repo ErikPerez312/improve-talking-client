@@ -100,14 +100,12 @@
 		8607AF06216A967C00DA3DDA /* improve-talking */ = {
 			isa = PBXGroup;
 			children = (
-				846BD9BD216DB9FE00B05DCB /* UIViewController+Extensions.swift */,
 				8607AF1E216BD03800DA3DDA /* Model */,
 				8607AF19216A978F00DA3DDA /* Networking */,
-				8607AF07216A967C00DA3DDA /* AppDelegate.swift */,
 				846BD9B8216D684800B05DCB /* ViewControllers */,
+				8670C88D216FE62900CA7055 /* Helpers */,
+				8670C88C216FE61800CA7055 /* Supporting-Files */,
 				8607AF0E216A967E00DA3DDA /* Assets.xcassets */,
-				8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */,
-				8607AF13216A967E00DA3DDA /* Info.plist */,
 			);
 			path = "improve-talking";
 			sourceTree = "<group>";
@@ -128,6 +126,24 @@
 				8607AF23216BFCE300DA3DDA /* TwilioHandler.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8670C88C216FE61800CA7055 /* Supporting-Files */ = {
+			isa = PBXGroup;
+			children = (
+				8607AF07216A967C00DA3DDA /* AppDelegate.swift */,
+				8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */,
+				8607AF13216A967E00DA3DDA /* Info.plist */,
+			);
+			path = "Supporting-Files";
+			sourceTree = "<group>";
+		};
+		8670C88D216FE62900CA7055 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				846BD9BD216DB9FE00B05DCB /* UIViewController+Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,13 +10,6 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - TwilioVideo (~> 1.0)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - ActionCableClient
-    - SnapKit
-    - Starscream
-    - TwilioVideo
-
 SPEC CHECKSUMS:
   ActionCableClient: c8a466410d31bfa14e7a9c209b539c1e2d026a5f
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
@@ -25,4 +18,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5f00f21cf5e9ff9be5c26fb3c49db048774ca11c
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

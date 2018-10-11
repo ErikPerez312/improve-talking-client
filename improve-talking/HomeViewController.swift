@@ -21,7 +21,8 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
     // MARK: ToastSocketHandlerDelegate
     
     func didCreateChatRoom(withName roomName: String, token: String) {
-        print("\n* created chat room name: \(roomName), token\(token)\n")
+        let chatViewController = ChatViewController(roomName: roomName, token: token)
+        self.present(chatViewController, animated: true, completion: nil)
     }
     
     // MARK: - Private
@@ -41,7 +42,7 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
     }
     
     @objc private func chatButtonPressed(_ sender: UIButton) {
-        
+        socketHandler?.chatWithRemoteUser()
     }
     
     private func buildSocketHandler() {

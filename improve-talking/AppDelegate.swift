@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let window = UIWindow()
-        let homeViewController = InitialViewController()
+        let homeViewController = ChatViewController(roomName: "Sunny", token: "123")
         self.window = window
         window.rootViewController = homeViewController
         window.makeKeyAndVisible()

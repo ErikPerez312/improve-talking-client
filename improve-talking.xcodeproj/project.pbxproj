@@ -18,6 +18,9 @@
 		8607AF22216BE5ED00DA3DDA /* ToastSocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF21216BE5ED00DA3DDA /* ToastSocketHandler.swift */; };
 		8607AF24216BFCE300DA3DDA /* TwilioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF23216BFCE300DA3DDA /* TwilioHandler.swift */; };
 		8607AF26216C139A00DA3DDA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF25216C139A00DA3DDA /* ChatViewController.swift */; };
+		8670C88F217012C100CA7055 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670C88E217012C100CA7055 /* User.swift */; };
+		8670C891217013DD00CA7055 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670C890217013DD00CA7055 /* KeychainHelper.swift */; };
+		8670C893217112A800CA7055 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670C892217112A800CA7055 /* String+Extensions.swift */; };
 		DFBD4C40CB89E73C085E07AD /* Pods_improve_talking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0CEF4A2B62426922B849713 /* Pods_improve_talking.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,9 @@
 		8607AF21216BE5ED00DA3DDA /* ToastSocketHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastSocketHandler.swift; sourceTree = "<group>"; };
 		8607AF23216BFCE300DA3DDA /* TwilioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioHandler.swift; sourceTree = "<group>"; };
 		8607AF25216C139A00DA3DDA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8670C88E217012C100CA7055 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8670C890217013DD00CA7055 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		8670C892217112A800CA7055 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E0CEF4A2B62426922B849713 /* Pods_improve_talking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_improve_talking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA19E017879DE78E37AF8567 /* Pods-improve-talking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-improve-talking.release.xcconfig"; path = "Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +130,8 @@
 			children = (
 				8607AF21216BE5ED00DA3DDA /* ToastSocketHandler.swift */,
 				8607AF23216BFCE300DA3DDA /* TwilioHandler.swift */,
+				8670C88E217012C100CA7055 /* User.swift */,
+				8670C890217013DD00CA7055 /* KeychainHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				846BD9BD216DB9FE00B05DCB /* UIViewController+Extensions.swift */,
+				8670C892217112A800CA7055 /* String+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,6 +231,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ActionCableClient/ActionCableClient.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
@@ -229,6 +239,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionCableClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
@@ -267,10 +278,13 @@
 				8607AF1B216A97B700DA3DDA /* ToastAPI.swift in Sources */,
 				8607AF22216BE5ED00DA3DDA /* ToastSocketHandler.swift in Sources */,
 				8607AF24216BFCE300DA3DDA /* TwilioHandler.swift in Sources */,
+				8670C893217112A800CA7055 /* String+Extensions.swift in Sources */,
 				8607AF26216C139A00DA3DDA /* ChatViewController.swift in Sources */,
+				8670C891217013DD00CA7055 /* KeychainHelper.swift in Sources */,
 				8607AF1D216A981E00DA3DDA /* Route.swift in Sources */,
 				8607AF0A216A967C00DA3DDA /* HomeViewController.swift in Sources */,
 				8607AF08216A967C00DA3DDA /* AppDelegate.swift in Sources */,
+				8670C88F217012C100CA7055 /* User.swift in Sources */,
 				846BD9BA216D6B1600B05DCB /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

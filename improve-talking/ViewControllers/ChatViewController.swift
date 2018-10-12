@@ -23,7 +23,7 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
+        view.backgroundColor = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.03137254902, alpha: 1)
         twilioHandler.delegate = self
         twilioHandler.connectToRoom(withName: roomName, token: token)
     }

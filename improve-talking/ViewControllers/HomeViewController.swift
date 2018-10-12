@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import AudioToolbox
 
 class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
 
@@ -15,10 +16,14 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.934114673, green: 0.9433633331, blue: 0.9433633331, alpha: 1)
         buildOnlineUsersLabel()
-        buildTodayTopic()
+//        buildTodayTopic()
         buildChatButton()
         buildSocketHandler()
+        
     }
+    
+    //MARK: OUTLETS
+    let button = UIButton()
     
     // MARK: ToastSocketHandlerDelegate
     
@@ -81,24 +86,66 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         
     }
     
+    @objc private func HoldDown(sender:UIButton)
+    {
+//        button.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+        UIView.animate(withDuration: 0.3,
+                       animations: {
+                        self.button.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        })
+    }
+    
+    @objc private func holdReleaseInside(sender:UIButton)
+    {
+        button.backgroundColor = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.03137254902, alpha: 1)
+        UIView.animate(withDuration: 0.2) {
+            self.button.transform = CGAffineTransform.identity
+        }
+        AudioServicesPlayAlertSound(1519)
+    }
+    
+    @objc private func holdReleaseOutside(sender:UIButton)
+    {
+        button.backgroundColor = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.03137254902, alpha: 1)
+        UIView.animate(withDuration: 0.2) {
+            self.button.transform = CGAffineTransform.identity
+        }
+    }
+    
+    
+    @objc private func animateOnTap() {
+        UIView.animate(withDuration: 0.4,
+                       animations: {
+                        self.button.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        },
+                       completion: { _ in
+                        UIView.animate(withDuration: 0.3) {
+                            self.button.transform = CGAffineTransform.identity
+                        }
+        })
+    }
+    
     private func buildChatButton() {
-        let button = UIButton()
+        
        
         button.setImage(#imageLiteral(resourceName: "Phone"), for: .normal)
-        button.imageEdgeInsets = UIEdgeInsetsMake(40, 40, 40, 40)
-        button.layer.cornerRadius = 175/2
+//        button.imageEdgeInsets = UIEdgeInsetsMake(-10, -10, -10, -10)
+        button.layer.cornerRadius = 100
         button.backgroundColor = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.03137254902, alpha: 1)
         button.addTarget(self, action: #selector(chatButtonPressed(_:)), for: .touchUpInside)
-//        button.layer.shadowColor = #colorLiteral(red: 0.231372549, green: 0.2509803922, blue: 0.2784313725, alpha: 1)
-//        button.layer.shadowRadius = 2.0
-//        button.layer.shadowOpacity = 1.0
-//        button.layer.shadowOffset = CGSize(width: 0, height: 2)
-//        button.layer.masksToBounds = false
+        button.adjustsImageWhenHighlighted = false
         view.addSubview(button)
+        
+        
+//        button.addTarget(self, action: #selector(holdReleaseInside(sender:)), for: UIControlEvents.touchUpInside)
+//        button.addTarget(self, action: #selector(holdReleaseOutside(sender:)), for: UIControlEvents.touchUpOutside)
+//        button.addTarget(self, action: #selector(HoldDown(sender:)), for: UIControlEvents.touchDown)
+//        button.addTarget(self, action: #selector(animateOnTap), for: .touchUpInside)
+    
         button.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
-            maker.height.width.equalTo(175)
-            maker.bottom.equalToSuperview().inset(80)
+            maker.height.width.equalTo(200)
+            maker.bottom.equalToSuperview().inset(200)
         }
     }
     

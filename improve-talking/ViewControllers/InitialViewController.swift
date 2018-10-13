@@ -149,7 +149,7 @@ class InitialViewController: UIViewController {
             maker.center.equalToSuperview()
         }
     }
-    
+
     private func presentHomeViewController() {
         let homeViewController = HomeViewController()
         navigationController?.pushViewController(homeViewController, animated: true)

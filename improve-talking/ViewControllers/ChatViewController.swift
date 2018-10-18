@@ -21,12 +21,16 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
         fatalError("Method not supported")
     }
     
+    //MARK: CONSTRAINT VARIABLES
+    let topicSize = UIScreen.main.bounds.height * 0.088
+    let currentTopicSize = UIScreen.main.bounds.height * 0.04755
+    
     //MARK: OUTLETS
     var currentTopicLabel: UILabel = {
         var label = UILabel()
         label.textColor = UIColor.white
         label.text = "Current Topic:"
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 35)
+        
         return label
     }()
     
@@ -34,7 +38,7 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
         var label = UILabel()
         label.textColor = UIColor.white
         label.text = "Bubble"
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 65)
+        
         return label
     }()
     
@@ -54,6 +58,12 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
     }()
     
     //MARK: Private functions
+    
+    private func addFonts() {
+        topicLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: topicSize)
+        currentTopicLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 35)
+    }
+    
     private func addOutlets() {
          [currentTopicLabel, topicLabel, iconImageView, cancelButton].forEach { (subview) in
             view.addSubview(subview)
@@ -61,8 +71,13 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
     }
     
     private func setConstraints() {
+        
+        let iconWidthHeight = UIScreen.main.bounds.height * 0.2717
+        let topDistance = UIScreen.main.bounds.height * 0.088
+        let buttonDistance = UIScreen.main.bounds.height * 0.102
+        
         currentTopicLabel.snp.makeConstraints { (maker) in
-            maker.top.equalToSuperview().offset(65)
+            maker.top.equalToSuperview().offset(topDistance)
             maker.centerX.equalToSuperview()
         }
         
@@ -72,7 +87,7 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
         }
         
         iconImageView.snp.makeConstraints { (maker) in
-            maker.height.width.equalTo(200)
+            maker.height.width.equalTo(iconWidthHeight)
             maker.top.equalTo(topicLabel.snp.bottom).offset(45)
             maker.centerX.equalToSuperview()
         }
@@ -80,7 +95,7 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
         cancelButton.snp.makeConstraints { (maker) in
             maker.width.height.equalTo(105)
             maker.centerX.equalToSuperview()
-            maker.top.equalTo(iconImageView.snp.bottom).offset(75)
+            maker.top.equalTo(iconImageView.snp.bottom).offset(buttonDistance)
         }
         
     }
@@ -89,6 +104,7 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.03137254902, alpha: 1)
         addOutlets()
+        addFonts()
         setConstraints()
 //        twilioHandler.delegate = self
 //        twilioHandler.connectToRoom(withName: roomName, token: token)

@@ -93,7 +93,9 @@ class InitialViewController: UIViewController {
         let iconHeightWidth = UIScreen.main.bounds.height * 0.17
         let iconTopDistance = UIScreen.main.bounds.height * 0.095
         let textFieldWidth = UIScreen.main.bounds.width * 0.616
+        let textFieldHeight = UIScreen.main.bounds.height * 0.06
         let textFieldTopDistance = UIScreen.main.bounds.height * 0.08
+        let buttonHeight = UIScreen.main.bounds.height * 0.088
         
         
         iconImageView.snp.makeConstraints { (make) in
@@ -110,14 +112,14 @@ class InitialViewController: UIViewController {
         
         usernameTextField.snp.makeConstraints { (make) in
             make.width.equalTo(textFieldWidth)
-            make.height.equalTo(45)
+            make.height.equalTo(textFieldHeight)
             make.top.equalTo(appNameLabel.snp.bottom).offset(textFieldTopDistance)
             make.centerX.equalToSuperview()
         }
         
         passwordTextField.snp.makeConstraints { (make) in
             make.width.equalTo(textFieldWidth)
-            make.height.equalTo(45)
+            make.height.equalTo(textFieldHeight)
             make.top.equalTo(usernameTextField.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
         }
@@ -125,7 +127,7 @@ class InitialViewController: UIViewController {
         continueButton.snp.makeConstraints { (make) in
             make.width.equalTo(textFieldWidth)
             make.centerX.equalToSuperview()
-            make.height.equalTo(65)
+            make.height.equalTo(buttonHeight)
             make.top.equalTo(passwordTextField.snp.bottom).offset(45)
         }
         

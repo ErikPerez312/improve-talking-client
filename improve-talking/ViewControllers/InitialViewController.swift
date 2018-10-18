@@ -14,7 +14,7 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//        addTextFieldObservers()
+
         hideKeyboardWhenTappedAround()
         view.backgroundColor = #colorLiteral(red: 0.934114673, green: 0.9433633331, blue: 0.9433633331, alpha: 1)
         addSubviews()
@@ -24,6 +24,10 @@ class InitialViewController: UIViewController {
     //MARK: - Variables
     private var keyboardHeight = UIScreen.main.bounds.height * 0.3
     private var originalY = UIScreen.main.bounds.origin.y
+    private let iconHeightWidth = UIScreen.main.bounds.height * 0.17
+    private let iconTopDistance = UIScreen.main.bounds.height * 0.095
+    private let textFieldWidth = UIScreen.main.bounds.width * 0.616
+    private let textFieldTopDistance = UIScreen.main.bounds.height * 0.08
     
     // MARK: - Private Outlets
     
@@ -98,10 +102,7 @@ class InitialViewController: UIViewController {
     }
     
     private func setConstraints() {
-        let iconHeightWidth = UIScreen.main.bounds.height * 0.17
-        let iconTopDistance = UIScreen.main.bounds.height * 0.095
-        let textFieldWidth = UIScreen.main.bounds.width * 0.616
-        let textFieldTopDistance = UIScreen.main.bounds.height * 0.08
+        
         
         iconImageView.snp.makeConstraints { (make) in
             make.height.width.equalTo(iconHeightWidth)

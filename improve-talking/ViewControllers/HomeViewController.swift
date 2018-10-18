@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.934114673, green: 0.9433633331, blue: 0.9433633331, alpha: 1)
         buildOnlineUsersLabel()
-//        buildTodayTopic()
+        buildTodayTopic()
         buildChatButton()
         buildSocketHandler()
         

@@ -23,6 +23,7 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
     
     //MARK: OUTLETS
     let button = UIButton()
+    let containerView = UIView()
     
     // MARK: ToastSocketHandlerDelegate
     
@@ -35,33 +36,14 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
     private var socketHandler: ToastSocketHandler?
     
     
-    private func buildOnlineUsersLabel() {
-        
-        let valueLabel = UILabel()
-        valueLabel.text = "25"
-        valueLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
-        valueLabel.textColor = #colorLiteral(red: 0.231372549, green: 0.2509803922, blue: 0.2784313725, alpha: 1)
-        self.view.addSubview(valueLabel)
-        valueLabel.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-40)
-            make.top.equalToSuperview().offset(45)
-        }
-        
-        let label = UILabel()
-        label.text = "Online Users:"
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
-        label.textColor = #colorLiteral(red: 0.231372549, green: 0.2509803922, blue: 0.2784313725, alpha: 1)
-        self.view.addSubview(label)
-        label.snp.makeConstraints { (make) in
-            make.right.equalTo(valueLabel.snp.left).offset(-5)
-            make.top.equalToSuperview().offset(45)
-        }
-    }
     
     
     private func buildTodayTopic() {
         
-        let containerView = UIView()
+        let containerHeight = UIScreen.main.bounds.height * 0.4755
+        let topDistance = UIScreen.main.bounds.height * 0.1358
+        
+        
         containerView.backgroundColor = UIColor.white
         containerView.layer.cornerRadius = 15
         containerView.layer.shadowColor = #colorLiteral(red: 0.231372549, green: 0.2509803922, blue: 0.2784313725, alpha: 1)
@@ -73,9 +55,9 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         view.addSubview(containerView)
         
         containerView.snp.makeConstraints { (make) in
-            make.height.equalTo(350)
+            make.height.equalTo(containerHeight)
             make.leading.trailing.equalToSuperview().inset(40)
-            make.top.equalToSuperview().offset(145)
+            make.top.equalToSuperview().offset(topDistance)
         }
         
         let label = UILabel()
@@ -104,7 +86,7 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         
         let labelOne = UILabel()
         labelOne.numberOfLines = 0
-        labelOne.text = "There will be a topic at the top"
+        labelOne.text = "Topic will be at the top"
         label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
         
         containerView.addSubview(labelOne)
@@ -112,6 +94,7 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         labelOne.snp.makeConstraints { (maker) in
             maker.top.equalTo(label.snp.bottom).offset(27)
             maker.left.equalTo(firstOrangeBullet.snp.right).offset(8)
+            
             maker.width.equalToSuperview().inset(25)
             
         }
@@ -223,7 +206,7 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         button.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
             maker.height.width.equalTo(125)
-            maker.bottom.equalToSuperview().inset(60)
+            maker.top.equalTo(containerView.snp.bottom).offset(50)
         }
     }
     

@@ -12,13 +12,20 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//        addTextFieldObservers()
         hideKeyboardWhenTappedAround()
         view.backgroundColor = #colorLiteral(red: 0.934114673, green: 0.9433633331, blue: 0.9433633331, alpha: 1)
         addSubviews()
         setConstraints()
     }
     
-    // MARK: - Private
+    //MARK: - Variables
+    private var keyboardHeight = UIScreen.main.bounds.height * 0.3
+    private var originalY = UIScreen.main.bounds.origin.y
+    
+    // MARK: - Private Outlets
     
     private var iconImageView: UIImageView = {
         var imageView = UIImageView()
@@ -124,6 +131,28 @@ class InitialViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(passwordTextField.snp.bottom).offset(45)
         }
+    }
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        let beginFrameValue = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)!
+        let beginFrame = beginFrameValue.cgRectValue
+        let endFrameValue = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)!
+        let endFrame = endFrameValue.cgRectValue
+    
+        if beginFrame.equalTo(endFrame) {
+            return
+        }
+        if originalY == self.view.frame.origin.y {
+            self.view.frame.origin.y -= keyboardHeight
+        }
+        
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+            self.view.frame.origin.y += keyboardHeight
     }
     
     @objc private func continueButtonPressed(_ sender: UIButton) {

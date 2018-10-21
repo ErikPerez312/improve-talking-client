@@ -1,21 +1,32 @@
 PODS:
   - ActionCableClient (0.2.3):
     - Starscream (~> 2.0.0)
+  - KeychainSwift (11.0.0)
   - SnapKit (4.0.0)
   - Starscream (2.0.4)
   - TwilioVideo (1.4.2)
 
 DEPENDENCIES:
   - ActionCableClient
+  - KeychainSwift (~> 11.0)
   - SnapKit (~> 4.0.0)
   - TwilioVideo (~> 1.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ActionCableClient
+    - KeychainSwift
+    - SnapKit
+    - Starscream
+    - TwilioVideo
+
 SPEC CHECKSUMS:
   ActionCableClient: c8a466410d31bfa14e7a9c209b539c1e2d026a5f
+  KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   Starscream: df5974ee928b157c8eda8af8de7c620276b7dfcc
   TwilioVideo: 149db5a5e9c8d5c32453b2d8f335b2bfc7b9c5a2
 
-PODFILE CHECKSUM: 5f00f21cf5e9ff9be5c26fb3c49db048774ca11c
+PODFILE CHECKSUM: 802d9d4d8029316cc6b1c68a8c9dceaa45a7eb1d
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

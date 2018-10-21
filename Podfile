@@ -9,4 +9,5 @@ target 'improve-talking' do
   pod 'SnapKit', '~> 4.0.0'
   pod "ActionCableClient"
   pod 'TwilioVideo', '~> 1.0'
+  pod 'KeychainSwift', '~> 11.0'
 end

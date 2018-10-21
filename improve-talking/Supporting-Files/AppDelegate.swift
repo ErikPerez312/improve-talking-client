@@ -13,13 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
         let window = UIWindow()
-        let homeViewController = ChatViewController(roomName: "Test", token: "12345")
+        let initialVewController = InitialViewController()
+        let navigationController = UINavigationController(rootViewController: initialVewController)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        
         self.window = window
-        window.rootViewController = homeViewController
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         return true
     }

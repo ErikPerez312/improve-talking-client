@@ -53,6 +53,7 @@ class ToastSocketHandler {
         
         client.onConnected = {
             self.buildChatChannel(withClient: client)
+            print("\n* ToastSocketHandler: Connected to client")
         }
         client.onDisconnected = { (error: ConnectionError?) in
             print("\n* ToastSocketHandler: Disconnected from client with error: \(String(describing: error))\n")
@@ -67,8 +68,10 @@ class ToastSocketHandler {
                 let chatRoom = data as? [String: String],
                 let roomName = chatRoom["room_name"],
                 let token = chatRoom["twilio_token"] else {
+                    print("\n* ToastSocketHandler: Failed to decode Twilio Response")
                     return
             }
+            print("\n* ToastSocketHandler: recieved Twilio name: \(roomName)\nToken: \(token)")
             self.delegate?.didCreateChatRoom(withName: roomName, token: token)
         }
         channel.onSubscribed = {

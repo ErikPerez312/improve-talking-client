@@ -10,7 +10,7 @@ import Foundation
 
 class ToastAPI {
     
-    typealias CompletionHandler = ([String: Any]?, Error?) -> Void
+    typealias CompletionHandler = ([String: Any]?, Error?, Int?) -> Void
     
     static let webSocketURL = URL(string: "wss://improve-talking.herokuapp.com/cable")!
     static var webSocketOrigin: String {
@@ -40,22 +40,23 @@ class ToastAPI {
             request.httpBody = route.body
             
             URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let response = response as? HTTPURLResponse else { return }
                 guard error == nil else {
-                    handler(nil, error)
+                    handler(nil, error, response.statusCode)
                     return
                 }
                 guard let data = data,
                     let json = try? JSONSerialization.jsonObject(with: data, options: []),
                     let result = json as? [String: Any] else {
-                        handler(nil, ToastAPIError.invalidJSON(path: route.path))
+                        handler(nil, ToastAPIError.invalidJSON(path: route.path), response.statusCode)
                         return
                 }
-                handler(result, nil)
+                handler(result, nil, response.statusCode)
                 return
             }.resume()
         } catch {
             // We catch errors for buildURL(stringURL:route:)
-            handler(nil, error)
+            handler(nil, error, nil)
         }
     }
     

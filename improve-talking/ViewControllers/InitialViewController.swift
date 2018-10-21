@@ -110,6 +110,8 @@ class InitialViewController: UIViewController {
         return indicator
     }()
     
+    // MARK: Methods
+    
     private func addSubviews() {
         self.view.addSubview(iconImageView)
         self.view.addSubview(appNameLabel)
@@ -120,6 +122,13 @@ class InitialViewController: UIViewController {
     }
     
     private func setConstraints() {
+        let iconHeightWidth = UIScreen.main.bounds.height * 0.17
+        let iconTopDistance = UIScreen.main.bounds.height * 0.095
+        let textFieldWidth = UIScreen.main.bounds.width * 0.616
+        let textFieldHeight = UIScreen.main.bounds.height * 0.06
+        let textFieldTopDistance = UIScreen.main.bounds.height * 0.08
+        let buttonHeight = UIScreen.main.bounds.height * 0.088
+        
         iconImageView.snp.makeConstraints { (make) in
             make.height.width.equalTo(iconHeightWidth)
             make.centerX.equalToSuperview()
@@ -132,13 +141,15 @@ class InitialViewController: UIViewController {
         }
         
         usernameTextField.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: textFieldWidth, height: 45.0))
+            make.width.equalTo(textFieldWidth)
+            make.height.equalTo(textFieldHeight)
             make.top.equalTo(appNameLabel.snp.bottom).offset(textFieldTopDistance)
             make.centerX.equalToSuperview()
         }
         
         passwordTextField.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: textFieldWidth, height: 45.0))
+            make.width.equalTo(textFieldWidth)
+            make.height.equalTo(textFieldHeight)
             make.top.equalTo(usernameTextField.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
         }
@@ -146,6 +157,7 @@ class InitialViewController: UIViewController {
         continueButton.snp.makeConstraints { (make) in
             make.size.equalTo(CGSize(width: textFieldWidth, height: 65.0))
             make.centerX.equalToSuperview()
+            make.height.equalTo(buttonHeight)
             make.top.equalTo(passwordTextField.snp.bottom).offset(45)
         }
     

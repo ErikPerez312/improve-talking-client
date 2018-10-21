@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         buildChatButton()
         buildSocketHandler()
     }
-    
+
     // MARK: ToastSocketHandlerDelegate
     
     func didCreateChatRoom(withName roomName: String, token: String) {
@@ -30,33 +30,13 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
     // MARK: - Private
     
     private let button = UIButton()
+    private let containerView = UIView()
     private var socketHandler: ToastSocketHandler?
     
-    
-    private func buildOnlineUsersLabel() {
-        let valueLabel = UILabel()
-        valueLabel.text = "25"
-        valueLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
-        valueLabel.textColor = #colorLiteral(red: 0.231372549, green: 0.2509803922, blue: 0.2784313725, alpha: 1)
-        self.view.addSubview(valueLabel)
-        valueLabel.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-40)
-            make.top.equalToSuperview().offset(45)
-        }
-        
-        let label = UILabel()
-        label.text = "Online Users:"
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
-        label.textColor = #colorLiteral(red: 0.231372549, green: 0.2509803922, blue: 0.2784313725, alpha: 1)
-        self.view.addSubview(label)
-        label.snp.makeConstraints { (make) in
-            make.right.equalTo(valueLabel.snp.left).offset(-5)
-            make.top.equalToSuperview().offset(45)
-        }
-    }
-    
     private func buildTodayTopic() {
-        let containerView = UIView()
+        let containerHeight = UIScreen.main.bounds.height * 0.4755
+        let topDistance = UIScreen.main.bounds.height * 0.1358
+        
         containerView.backgroundColor = UIColor.white
         containerView.layer.cornerRadius = 15
         containerView.layer.shadowColor = #colorLiteral(red: 0.231372549, green: 0.2509803922, blue: 0.2784313725, alpha: 1)
@@ -67,9 +47,10 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
 
         view.addSubview(containerView)
         containerView.snp.makeConstraints { (make) in
-            make.height.equalTo(350)
+            make.height.equalTo(containerHeight)
             make.leading.trailing.equalToSuperview().inset(40)
-            make.top.equalToSuperview().offset(145)
+            make.top.equalToSuperview().offset(topDistance)
+
         }
         
         let label = UILabel()
@@ -96,7 +77,7 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         
         let labelOne = UILabel()
         labelOne.numberOfLines = 0
-        labelOne.text = "There will be a topic at the top"
+        labelOne.text = "Topic will be at the top"
         label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
         
         containerView.addSubview(labelOne)
@@ -104,7 +85,6 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
             maker.top.equalTo(label.snp.bottom).offset(27)
             maker.left.equalTo(firstOrangeBullet.snp.right).offset(8)
             maker.width.equalToSuperview().inset(25)
-            
         }
         
         let secondOrangeBullet = UIView()
@@ -144,7 +124,7 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
         
         let labelThree = UILabel()
         labelThree.text = "Have fun!"
-        
+
         containerView.addSubview(labelThree)
         labelThree.snp.makeConstraints { (maker) in
             maker.top.equalTo(labelTwo.snp.bottom).offset(27)
@@ -189,18 +169,16 @@ class HomeViewController: UIViewController, ToastSocketHandlerDelegate {
     
     private func buildChatButton() {
         button.setImage(#imageLiteral(resourceName: "Phone"), for: .normal)
-        button.layer.cornerRadius = 100
         button.imageEdgeInsets = UIEdgeInsetsMake(30, 30, 30, 30)
         button.layer.cornerRadius = 62.5
         button.backgroundColor = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.03137254902, alpha: 1)
         button.addTarget(self, action: #selector(chatButtonPressed(_:)), for: .touchUpInside)
         button.adjustsImageWhenHighlighted = false
         view.addSubview(button)
-
         button.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
             maker.height.width.equalTo(125)
-            maker.bottom.equalToSuperview().inset(60)
+            maker.top.equalTo(containerView.snp.bottom).offset(50)
         }
     }
     

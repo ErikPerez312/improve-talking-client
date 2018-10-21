@@ -17,86 +17,18 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.03137254902, alpha: 1)
-        addSubviews()
-        setConstraints()
-        twilioHandler.delegate = self
-        twilioHandler.connectToRoom(withName: roomName, token: token)
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("Method not supported")
     }
     
-    // MARK: - Private
-    
-    private var currentTopicLabel: UILabel = {
-        var label = UILabel()
-        label.textColor = UIColor.white
-        label.text = "Current Topic:"
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 35)
-        return label
-    }()
-    
-    private var topicLabel: UILabel = {
-        var label = UILabel()
-        label.textColor = UIColor.white
-        label.text = "Bubble"
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 65)
-        return label
-    }()
-    
-    private var iconImageView: UIImageView = {
-        var imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "Audio")
-        return imageView
-    }()
-    
-    private var cancelButton: UIButton = {
-        var button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "Cancel"), for: .normal)
-        button.layer.cornerRadius = 100
-        button.adjustsImageWhenHighlighted = false
-        button.addTarget(self, action: #selector(cancelButtonPressed(_:)), for: .touchUpInside)
-        return button
-    }()
-    
-    private func addSubviews() {
-         [currentTopicLabel, topicLabel, iconImageView, cancelButton].forEach { (subview) in
-            view.addSubview(subview)
-         }
-    }
-    
-    private func setConstraints() {
-        currentTopicLabel.snp.makeConstraints { (maker) in
-            maker.top.equalToSuperview().offset(65)
-            maker.centerX.equalToSuperview()
-        }
-        
-        topicLabel.snp.makeConstraints { (maker) in
-            maker.centerX.equalToSuperview()
-            maker.top.equalTo(currentTopicLabel.snp.bottom).offset(30)
-        }
-        
-        iconImageView.snp.makeConstraints { (maker) in
-            maker.height.width.equalTo(200)
-            maker.top.equalTo(topicLabel.snp.bottom).offset(45)
-            maker.centerX.equalToSuperview()
-        }
-        
-        cancelButton.snp.makeConstraints { (maker) in
-            maker.width.height.equalTo(105)
-            maker.centerX.equalToSuperview()
-            maker.top.equalTo(iconImageView.snp.bottom).offset(75)
-        }
-        
-    }
-    
-    @objc private func cancelButtonPressed(_ sender: UIButton) {
-        // TODO: Implement method body
-        print("\n*ChatViewController -> cancelButtonPressed(_:): Missing method body")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.03137254902, alpha: 1)
+        addSubviews()
+        addFonts()
+        setConstraints()
+        twilioHandler.delegate = self
+        twilioHandler.connectToRoom(withName: roomName, token: token)
     }
     
     // MARK: TwilioHandlerDelegate
@@ -127,9 +59,86 @@ class ChatViewController: UIViewController, TwilioHandlerDelegate {
     }
     
     // MARK: - Private
-    
+
+    private let topicSize = UIScreen.main.bounds.height * 0.088
+    private let currentTopicSize = UIScreen.main.bounds.height * 0.04755
     private let twilioHandler = TwilioHandler()
     
     private let roomName: String
     private let token: String
+
+    private var currentTopicLabel: UILabel = {
+        var label = UILabel()
+        label.textColor = UIColor.white
+        label.text = "Current Topic:"
+        return label
+    }()
+
+    private var topicLabel: UILabel = {
+        var label = UILabel()
+        label.textColor = UIColor.white
+        label.text = "Bubble"
+        return label
+    }()
+
+    private var iconImageView: UIImageView = {
+        var imageView = UIImageView()
+        imageView.image = #imageLiteral(resourceName: "Audio")
+        return imageView
+    }()
+
+    private var cancelButton: UIButton = {
+        var button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "Cancel"), for: .normal)
+        button.layer.cornerRadius = 100
+        button.adjustsImageWhenHighlighted = false
+        button.addTarget(self, action: #selector(cancelButtonPressed(_:)), for: .touchUpInside)
+        return button
+    }()
+    
+    // MARK: Methods
+
+    private func addSubviews() {
+        [currentTopicLabel, topicLabel, iconImageView, cancelButton].forEach { (subview) in
+            view.addSubview(subview)
+        }
+    }
+    
+    private func setConstraints() {
+        let iconWidthHeight = UIScreen.main.bounds.height * 0.2717
+        let topDistance = UIScreen.main.bounds.height * 0.088
+        let buttonDistance = UIScreen.main.bounds.height * 0.102
+        
+        currentTopicLabel.snp.makeConstraints { (maker) in
+            maker.top.equalToSuperview().offset(topDistance)
+            maker.centerX.equalToSuperview()
+        }
+        
+        topicLabel.snp.makeConstraints { (maker) in
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(currentTopicLabel.snp.bottom).offset(30)
+        }
+        
+        iconImageView.snp.makeConstraints { (maker) in
+            maker.height.width.equalTo(iconWidthHeight)
+            maker.top.equalTo(topicLabel.snp.bottom).offset(45)
+            maker.centerX.equalToSuperview()
+        }
+        
+        cancelButton.snp.makeConstraints { (maker) in
+            maker.width.height.equalTo(105)
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(iconImageView.snp.bottom).offset(buttonDistance)
+        }
+    }
+    
+    private func addFonts() {
+        topicLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: topicSize)
+        currentTopicLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 35)
+    }
+
+    @objc private func cancelButtonPressed(_ sender: UIButton) {
+        // TODO: Implement method body
+        print("\n*ChatViewController -> cancelButtonPressed(_:): Missing method body")
+    }
 }

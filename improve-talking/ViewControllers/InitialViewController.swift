@@ -14,6 +14,8 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         view.backgroundColor = #colorLiteral(red: 0.934114673, green: 0.9433633331, blue: 0.9433633331, alpha: 1)
         hideKeyboardWhenTappedAround()
         addSubviews()
@@ -21,6 +23,13 @@ class InitialViewController: UIViewController {
     }
     
     // MARK: - Private
+  
+    private var keyboardHeight = UIScreen.main.bounds.height * 0.3
+    private var originalY = UIScreen.main.bounds.origin.y
+    private let iconHeightWidth = UIScreen.main.bounds.height * 0.17
+    private let iconTopDistance = UIScreen.main.bounds.height * 0.095
+    private let textFieldWidth = UIScreen.main.bounds.width * 0.616
+    private let textFieldTopDistance = UIScreen.main.bounds.height * 0.08 
     
     /// Flag which indicates whether a login request should be attempted.
     private var shouldAttemptLogin = false {
@@ -111,11 +120,6 @@ class InitialViewController: UIViewController {
     }
     
     private func setConstraints() {
-        let iconHeightWidth = UIScreen.main.bounds.height * 0.17
-        let iconTopDistance = UIScreen.main.bounds.height * 0.095
-        let textFieldWidth = UIScreen.main.bounds.width * 0.616
-        let textFieldTopDistance = UIScreen.main.bounds.height * 0.08
-        
         iconImageView.snp.makeConstraints { (make) in
             make.height.width.equalTo(iconHeightWidth)
             make.centerX.equalToSuperview()
@@ -224,6 +228,25 @@ class InitialViewController: UIViewController {
                 self.presentHomeViewController()
             }
         }
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        let beginFrameValue = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)!
+        let beginFrame = beginFrameValue.cgRectValue
+        let endFrameValue = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)!
+        let endFrame = endFrameValue.cgRectValue
+    
+        if beginFrame.equalTo(endFrame) {
+            return
+        }
+        if originalY == self.view.frame.origin.y {
+            self.view.frame.origin.y -= keyboardHeight
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+            self.view.frame.origin.y += keyboardHeight
     }
     
     @objc private func continueButtonPressed(_ sender: UIButton) {

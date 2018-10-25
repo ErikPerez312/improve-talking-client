@@ -155,9 +155,8 @@ class InitialViewController: UIViewController {
         }
         
         continueButton.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: textFieldWidth, height: 65.0))
+            make.size.equalTo(CGSize(width: textFieldWidth, height: buttonHeight))
             make.centerX.equalToSuperview()
-            make.height.equalTo(buttonHeight)
             make.top.equalTo(passwordTextField.snp.bottom).offset(45)
         }
     
@@ -178,13 +177,16 @@ class InitialViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    private func showActivityIndicator() {
+    private func showContinueButtonActivityIndicator() {
         continueButton.setTitle(nil, for: .normal)
+        // Disabling user interaction prevents multiple api calls
+        continueButton.isUserInteractionEnabled = false
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
     
-    private func hideActivityIndicator() {
+    private func hideContinueButtonActivityIndicator() {
+        continueButton.isUserInteractionEnabled = true
         continueButton.setTitle("Continue", for: .normal)
         activityIndicator.stopAnimating()
     }
@@ -208,7 +210,7 @@ class InitialViewController: UIViewController {
             guard error == nil else {
                 print(error ?? "undefined error")
                 DispatchQueue.main.async {
-                    self.hideActivityIndicator()
+                    self.hideContinueButtonActivityIndicator()
                     self.presentAlert(withTitle: "Oops", message: "Something went wrong on our side. Please try again later", handler: nil)
                 }
                 return
@@ -218,7 +220,7 @@ class InitialViewController: UIViewController {
                     let unauthorizedMessage = json?["error"] as? String ?? "Incorrect username or password"
                     print("\n* InitialViewController -> loginUser(): \(unauthorizedMessage)")
                     DispatchQueue.main.async {
-                        self.hideActivityIndicator()
+                        self.hideContinueButtonActivityIndicator()
                         self.presentAlert(withTitle: "Incorrect Password",
                                           message: "This username is already registered. Please enter the correct password or create a new account",
                                           handler: nil)
@@ -229,7 +231,7 @@ class InitialViewController: UIViewController {
                 let user = User(json: json) else {
                     print("\n* InitialViewController -> loginUser(): Invalid json")
                     DispatchQueue.main.async {
-                        self.hideActivityIndicator()
+                        self.hideContinueButtonActivityIndicator()
                         self.presentAlert(withTitle: "Oops", message: "Something went wrong on our side. Please try again later", handler: nil)
                     }
                     return
@@ -264,14 +266,14 @@ class InitialViewController: UIViewController {
     @objc private func continueButtonPressed(_ sender: UIButton) {
         // Attempt to create a new account, if username is already registered we update 'shouldLogin' flag
         // inorder to attempt login with provided credentials
-        showActivityIndicator()
+        showContinueButtonActivityIndicator()
         // we can safely force unwrap text from textfields b'c 'continue' button is only enabled
         // when textfields have valid text.
         ToastAPI.signUp(withUsername: usernameTextField.text!, password: passwordTextField.text!) { (json, error, statusCode) in
             guard error == nil else {
                 print(error ?? "undefined error")
                 DispatchQueue.main.async {
-                    self.hideActivityIndicator()
+                    self.hideContinueButtonActivityIndicator()
                     self.presentAlert(withTitle: "Oops", message: "Something went wrong on our side. Please try again later", handler: nil)
                 }
                 return

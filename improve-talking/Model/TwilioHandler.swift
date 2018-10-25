@@ -61,13 +61,20 @@ class TwilioHandler: NSObject {
     private var remoteUser: TVIParticipant?
     
     private func prepareLocalMedia() -> (videoTracks: [TVILocalVideoTrack], audioTracks: [TVILocalAudioTrack]){
-        let camera = TVICameraCapturer(source: .frontCamera, delegate: self)!
-        guard let videoTrack = TVILocalVideoTrack(capturer: camera, enabled: true, constraints: nil),
-            let audioTrack = TVILocalAudioTrack(options: nil, enabled: true) else {
-                return ([TVILocalVideoTrack](), [TVILocalAudioTrack]())
+        guard let audioTrack = TVILocalAudioTrack(options: nil, enabled: true) else {
+            return ([TVILocalVideoTrack](), [TVILocalAudioTrack]())
         }
-        delegate?.addRenderer(forLocalVideoTrack: videoTrack)
-        return ([videoTrack], [audioTrack])
+        return ([TVILocalVideoTrack](), [audioTrack])
+        
+        // TODO: replace method body with commented code when video feature is implemented.
+        
+        // let camera = TVICameraCapturer(source: .frontCamera, delegate: self)!
+        // guard let videoTrack = TVILocalVideoTrack(capturer: camera, enabled: true, constraints: nil),
+        //    let audioTrack = TVILocalAudioTrack(options: nil, enabled: true) else {
+        //        return ([TVILocalVideoTrack](), [TVILocalAudioTrack]())
+        //}
+        //delegate?.addRenderer(forLocalVideoTrack: videoTrack)
+        //return ([videoTrack], [audioTrack])
     }
     
     private func cleanUpRemoteParticipant() {

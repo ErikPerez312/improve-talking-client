@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		846BD9BA216D6B1600B05DCB /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BD9B9216D6B1600B05DCB /* InitialViewController.swift */; };
+		846BD9BE216DB9FE00B05DCB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BD9BD216DB9FE00B05DCB /* UIViewController+Extensions.swift */; };
 		8607AF08216A967C00DA3DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF07216A967C00DA3DDA /* AppDelegate.swift */; };
-		8607AF0A216A967C00DA3DDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF09216A967C00DA3DDA /* ViewController.swift */; };
-		8607AF0D216A967C00DA3DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF0B216A967C00DA3DDA /* Main.storyboard */; };
+		8607AF0A216A967C00DA3DDA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF09216A967C00DA3DDA /* HomeViewController.swift */; };
 		8607AF0F216A967E00DA3DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF0E216A967E00DA3DDA /* Assets.xcassets */; };
 		8607AF12216A967E00DA3DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */; };
+		8607AF1B216A97B700DA3DDA /* ToastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF1A216A97B700DA3DDA /* ToastAPI.swift */; };
+		8607AF1D216A981E00DA3DDA /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF1C216A981E00DA3DDA /* Route.swift */; };
+		8607AF22216BE5ED00DA3DDA /* ToastSocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF21216BE5ED00DA3DDA /* ToastSocketHandler.swift */; };
+		8607AF24216BFCE300DA3DDA /* TwilioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF23216BFCE300DA3DDA /* TwilioHandler.swift */; };
+		8607AF26216C139A00DA3DDA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607AF25216C139A00DA3DDA /* ChatViewController.swift */; };
+		8670C88F217012C100CA7055 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670C88E217012C100CA7055 /* User.swift */; };
+		8670C891217013DD00CA7055 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670C890217013DD00CA7055 /* KeychainHelper.swift */; };
+		8670C893217112A800CA7055 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670C892217112A800CA7055 /* String+Extensions.swift */; };
 		DFBD4C40CB89E73C085E07AD /* Pods_improve_talking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0CEF4A2B62426922B849713 /* Pods_improve_talking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E98681F7908409070222327 /* Pods-improve-talking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-improve-talking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking.debug.xcconfig"; sourceTree = "<group>"; };
+		846BD9B9216D6B1600B05DCB /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		846BD9BD216DB9FE00B05DCB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		8607AF04216A967C00DA3DDA /* improve-talking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "improve-talking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8607AF07216A967C00DA3DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8607AF09216A967C00DA3DDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8607AF0C216A967C00DA3DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8607AF09216A967C00DA3DDA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8607AF0E216A967E00DA3DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8607AF11216A967E00DA3DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8607AF13216A967E00DA3DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8607AF1A216A97B700DA3DDA /* ToastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAPI.swift; sourceTree = "<group>"; };
+		8607AF1C216A981E00DA3DDA /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		8607AF21216BE5ED00DA3DDA /* ToastSocketHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastSocketHandler.swift; sourceTree = "<group>"; };
+		8607AF23216BFCE300DA3DDA /* TwilioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioHandler.swift; sourceTree = "<group>"; };
+		8607AF25216C139A00DA3DDA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8670C88E217012C100CA7055 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8670C890217013DD00CA7055 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		8670C892217112A800CA7055 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E0CEF4A2B62426922B849713 /* Pods_improve_talking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_improve_talking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA19E017879DE78E37AF8567 /* Pods-improve-talking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-improve-talking.release.xcconfig"; path = "Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +75,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		846BD9B8216D684800B05DCB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				846BD9B9216D6B1600B05DCB /* InitialViewController.swift */,
+				8607AF09216A967C00DA3DDA /* HomeViewController.swift */,
+				8607AF25216C139A00DA3DDA /* ChatViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		8607AEFB216A967B00DA3DDA = {
 			isa = PBXGroup;
 			children = (
@@ -78,14 +106,53 @@
 		8607AF06216A967C00DA3DDA /* improve-talking */ = {
 			isa = PBXGroup;
 			children = (
-				8607AF07216A967C00DA3DDA /* AppDelegate.swift */,
-				8607AF09216A967C00DA3DDA /* ViewController.swift */,
-				8607AF0B216A967C00DA3DDA /* Main.storyboard */,
+				8607AF1E216BD03800DA3DDA /* Model */,
+				8607AF19216A978F00DA3DDA /* Networking */,
+				846BD9B8216D684800B05DCB /* ViewControllers */,
+				8670C88D216FE62900CA7055 /* Helpers */,
+				8670C88C216FE61800CA7055 /* Supporting-Files */,
 				8607AF0E216A967E00DA3DDA /* Assets.xcassets */,
+			);
+			path = "improve-talking";
+			sourceTree = "<group>";
+		};
+		8607AF19216A978F00DA3DDA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8607AF1A216A97B700DA3DDA /* ToastAPI.swift */,
+				8607AF1C216A981E00DA3DDA /* Route.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8607AF1E216BD03800DA3DDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8607AF21216BE5ED00DA3DDA /* ToastSocketHandler.swift */,
+				8607AF23216BFCE300DA3DDA /* TwilioHandler.swift */,
+				8670C88E217012C100CA7055 /* User.swift */,
+				8670C890217013DD00CA7055 /* KeychainHelper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8670C88C216FE61800CA7055 /* Supporting-Files */ = {
+			isa = PBXGroup;
+			children = (
+				8607AF07216A967C00DA3DDA /* AppDelegate.swift */,
 				8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */,
 				8607AF13216A967E00DA3DDA /* Info.plist */,
 			);
-			path = "improve-talking";
+			path = "Supporting-Files";
+			sourceTree = "<group>";
+		};
+		8670C88D216FE62900CA7055 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				846BD9BD216DB9FE00B05DCB /* UIViewController+Extensions.swift */,
+				8670C892217112A800CA7055 /* String+Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +217,6 @@
 			files = (
 				8607AF12216A967E00DA3DDA /* LaunchScreen.storyboard in Resources */,
 				8607AF0F216A967E00DA3DDA /* Assets.xcassets in Resources */,
-				8607AF0D216A967C00DA3DDA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,11 +230,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-improve-talking/Pods-improve-talking-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionCableClient/ActionCableClient.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionCableClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -200,22 +274,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8607AF0A216A967C00DA3DDA /* ViewController.swift in Sources */,
+				846BD9BE216DB9FE00B05DCB /* UIViewController+Extensions.swift in Sources */,
+				8607AF1B216A97B700DA3DDA /* ToastAPI.swift in Sources */,
+				8607AF22216BE5ED00DA3DDA /* ToastSocketHandler.swift in Sources */,
+				8607AF24216BFCE300DA3DDA /* TwilioHandler.swift in Sources */,
+				8670C893217112A800CA7055 /* String+Extensions.swift in Sources */,
+				8607AF26216C139A00DA3DDA /* ChatViewController.swift in Sources */,
+				8670C891217013DD00CA7055 /* KeychainHelper.swift in Sources */,
+				8607AF1D216A981E00DA3DDA /* Route.swift in Sources */,
+				8607AF0A216A967C00DA3DDA /* HomeViewController.swift in Sources */,
 				8607AF08216A967C00DA3DDA /* AppDelegate.swift in Sources */,
+				8670C88F217012C100CA7055 /* User.swift in Sources */,
+				846BD9BA216D6B1600B05DCB /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8607AF0B216A967C00DA3DDA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8607AF0C216A967C00DA3DDA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8607AF10216A967E00DA3DDA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -348,7 +424,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFR976VMLD;
-				INFOPLIST_FILE = "improve-talking/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/improve-talking/Supporting-Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +433,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perezErik.improve-talking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -367,7 +444,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFR976VMLD;
-				INFOPLIST_FILE = "improve-talking/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/improve-talking/Supporting-Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,7 +453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perezErik.improve-talking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
